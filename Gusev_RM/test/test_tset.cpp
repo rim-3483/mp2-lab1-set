@@ -295,3 +295,17 @@ TEST(TSet, check_negation_operator)
 
   EXPECT_EQ(expSet, set1);
 }
+TEST(TSet, d)
+{
+	TSet s1(10), s2(10), s3(10);
+	s1.InsElem(1);
+	s2.InsElem(2);
+	s3.InsElem(3);
+	TSet result = s1 + s2 + s3;
+	EXPECT_TRUE(result.IsMember(1));
+	EXPECT_TRUE(result.IsMember(2));
+	EXPECT_TRUE(result.IsMember(3));
+	for (int i = 0; i < 10; i++)
+		if (i != 1 && i != 2 && i != 3)
+			EXPECT_FALSE(result.IsMember(i));
+}
