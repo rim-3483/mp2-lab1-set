@@ -13,7 +13,7 @@ static const int BITS_PER_WORD = sizeof(TELEM) * 8;
 TBitField::TBitField(int len)
 {
     if (len < 0)                                         
-        throw std::invalid_argument("length must be non-negative");
+        throw std::invalid_argument("length must be non negative");
     if (len < 0) len = 0;
     BitLen = len;
     MemLen = (len + BITS_PER_WORD - 1) / BITS_PER_WORD;
